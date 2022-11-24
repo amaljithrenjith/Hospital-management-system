@@ -1,0 +1,68 @@
+{% extends 'booking/theme.html' %}
+
+
+
+{% block content%}
+  <div class="container">
+     <section class="book_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <h4>
+              <span class="design_dot"></span>
+              BOOK APPOINTMENT
+            </h4>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPatientName">Patient Name </label>
+                <input type="text" class="form-control" name="patientname" id="inputPatientName" placeholder="">
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDoctorName">Doctor's Name</label>
+                <select name="" class="form-control wide" name="doctname" id="inputDoctorName">
+                  <option value="Normal distribution ">Doctor Name 1</option>
+                  <option value="Normal distribution ">Doctor Name 2 </option>
+                  <option value="Normal distribution ">Doctor Name 3 </option>
+                </select>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDepartmentName">Department's Name</label>
+                <select name="" class="form-control wide" name="departname" id="inputDepartmentName">
+                  <option value="Normal distribution ">Cardiology </option>
+                  <option value="Normal distribution ">Surgery </option>
+                  <option value="Normal distribution ">First Aid </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPhone">Phone Number</label>
+                <input type="text" class="form-control" name="phoneno" id="inputPhone" placeholder="">
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputSymptoms">Symptoms</label>
+                <input type="text" class="form-control" name="symptoms" id="inputSymptoms" placeholder="">
+              </div>
+              <div class="form-group col-lg-4">
+                <label>Choose Date </label>
+                <div >
+                  <input type="date" name="bday">
+                  <span class="input-group-addon date_icon">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="btn-box pb-3">
+              <button type="submit" class="btn btn-success">submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+{% endblock   %}

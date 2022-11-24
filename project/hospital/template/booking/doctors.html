@@ -1,0 +1,30 @@
+{% extends 'booking/theme.html' %}
+    <!-- end slider section -->
+
+
+{% block content%}
+
+
+</div>
+  <div class="row pb-5">
+
+   <div class="container text-center"  >
+       {% for d in doctors %}
+      <div class="card text-center mx-3 my-3" style=" width:16em; display:inline-block">
+           <img src="{{d.doc_image.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">{{d.doc_name}}</h5>
+           <p class="card-text">{{d.doc_spec}}</p>
+
+      </div>
+   </div>
+      {% endfor %}
+ </div>
+   </div>
+
+
+
+  {% endblock   %}
+
+
+
