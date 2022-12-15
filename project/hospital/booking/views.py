@@ -18,6 +18,9 @@ def doctors(request):
 
 
 def appointment(request):
+    dict_docs = {
+        'doctors': Doctors.objects.all()
+    }
 
     if request.method =='POST':
 
@@ -30,7 +33,7 @@ def appointment(request):
           booking = Booking(pat_name=name_p,dot_name=name_d,dept_name=dept_name,ph_no=ph_no,symptmas=sytm,date=date)
           booking.save()
 
-    return render(request,'booking/appointment.html')
+    return render(request,'booking/appointment.html',dict_docs)
 
 def service(request):
 

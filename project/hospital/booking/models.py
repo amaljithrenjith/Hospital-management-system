@@ -13,8 +13,16 @@ class Booking(models.Model):
     def __str__(self):
         return self.pat_name
 
+department=[('Cardiologist','Cardiologist'),
+('Dermatologists','Dermatologists'),
+('Emergency Medicine Specialists','Emergency Medicine Specialists'),
+('Allergists/Immunologists','Allergists/Immunologists'),
+('Anesthesiologists','Anesthesiologists'),
+('Colon and Rectal Surgeons','Colon and Rectal Surgeons')
+]
+
 class Department(models.Model):
-    dep_name=models.CharField(max_length=220)
+    dep_name=models.CharField(max_length=220,choices=department)
     dep_desc=models.TextField()
 
     def __str__(self):
@@ -24,7 +32,7 @@ class Department(models.Model):
 
 
 class Doctors(models.Model):
-    doc_name = models.CharField(max_length=220)
+    doc_name = models.CharField(max_length=225)
     doc_spec = models.CharField(max_length=225)
     doc_image = models.ImageField(upload_to='doctors')
 
